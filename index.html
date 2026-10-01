@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Лицензионные слоты 2026 — проверка сертификата, RTP и домена сборки</title>
+<meta name="description" content="Лицензионные слоты 2026: чек-лист из девяти проверок, которые отделяют оригинал провайдера от скина-подделки — сертификат лаборатории, домен загрузки, версия RTP и подпись раунда.">
+<link rel="canonical" href="https://litsenzionnye-sloty28.github.io/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Лицензионные слоты 2026 — чек-лист подлинности сборки">
+<meta property="og:description" content="Девять проверок, по которым видно, что слот — оригинал провайдера с сертификатом лаборатории, а не клон с заниженным RTP.">
+<meta property="og:url" content="https://litsenzionnye-sloty28.github.io/">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+ --prb-fog:#e9edf2;--prb-surf:#f7f9fb;--prb-surf2:#dde3ea;--prb-raise:#ffffff;
+ --prb-ink:#121a26;--prb-ink2:#3a4656;--prb-ink3:#5c6878;
+ --prb-line:#cfd7e0;--prb-line2:#a7b2bf;
+ --prb-navy:#1f3a60;--prb-navy-fill:#274d7e;--prb-navy-soft:#d9e2ef;--prb-on-navy:#f2f7fc;
+ --prb-pass:#1d6b53;--prb-pass-soft:#d6e8e0;--prb-fail:#9c3030;--prb-fail-soft:#f0dadb;--prb-hold:#8a6412;--prb-hold-soft:#efe6cc;
+ --prb-pick:#d9e2ef;--prb-muted:#cdd4dd;
+ --prb-g1:#2a5f94;--prb-g2:#1f7a68;--prb-g3:#9c6a16;--prb-g4:#8a3f6b;--prb-g5:#4a4f9a;
+ --prb-serif:"Cormorant Garamond","Georgia","PT Serif",serif;
+ --prb-sans:"Inter","Segoe UI",Roboto,system-ui,sans-serif;
+ --prb-fs-h1:clamp(2.3rem,1.5rem + 3.4vw,3.6rem);
+ --prb-fs-h2:clamp(1.7rem,1.3rem + 1.5vw,2.3rem);
+ --prb-fs-h3:1.25rem;--prb-fs-lead:clamp(1.08rem,1rem + .45vw,1.26rem);
+ --prb-fs-body:1.0625rem;--prb-fs-ui:.9375rem;--prb-fs-sm:.84rem;--prb-fs-micro:.74rem;
+ --prb-fs-fig:clamp(1.6rem,1.2rem + 1.1vw,2rem);
+ --prb-gut:clamp(16px,4vw,26px);--prb-sec:clamp(42px,6vw,76px);
+ --prb-prose:730px;--prb-wide:1060px;--prb-hero:880px;
+ --prb-r1:4px;--prb-r2:8px;--prb-r3:13px;
+ --prb-e1:0 1px 0 rgba(18,26,38,.05),0 1px 3px rgba(18,26,38,.07);
+ --prb-e2:0 3px 10px rgba(18,26,38,.08),0 16px 30px -16px rgba(18,26,38,.22);
+ --prb-ease:cubic-bezier(.22,1,.36,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --prb-fog:#0e141d;--prb-surf:#151d28;--prb-surf2:#1f2937;--prb-raise:#232e3d;
+ --prb-ink:#e5ebf3;--prb-ink2:#aab7c8;--prb-ink3:#7d8a9b;
+ --prb-line:#2a3645;--prb-line2:#415062;
+ --prb-navy:#7fa8d8;--prb-navy-fill:#5f8cc4;--prb-navy-soft:#1c2c42;--prb-on-navy:#0c121b;
+ --prb-pass:#64c2a3;--prb-pass-soft:#143028;--prb-fail:#e07d7d;--prb-fail-soft:#331a1b;--prb-hold:#d6a63f;--prb-hold-soft:#2f2713;
+ --prb-pick:#1c2c42;--prb-muted:#2b3747;
+ --prb-g1:#5f97d0;--prb-g2:#39a68c;--prb-g3:#c69545;--prb-g4:#c074a0;--prb-g5:#8f93de;
+ color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+ --prb-fog:#0e141d;--prb-surf:#151d28;--prb-surf2:#1f2937;--prb-raise:#232e3d;
+ --prb-ink:#e5ebf3;--prb-ink2:#aab7c8;--prb-ink3:#7d8a9b;
+ --prb-line:#2a3645;--prb-line2:#415062;
+ --prb-navy:#7fa8d8;--prb-navy-fill:#5f8cc4;--prb-navy-soft:#1c2c42;--prb-on-navy:#0c121b;
+ --prb-pass:#64c2a3;--prb-pass-soft:#143028;--prb-fail:#e07d7d;--prb-fail-soft:#331a1b;--prb-hold:#d6a63f;--prb-hold-soft:#2f2713;
+ --prb-pick:#1c2c42;--prb-muted:#2b3747;
+ --prb-g1:#5f97d0;--prb-g2:#39a68c;--prb-g3:#c69545;--prb-g4:#c074a0;--prb-g5:#8f93de;
+ color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--prb-fog);color:var(--prb-ink);font-family:var(--prb-sans);font-size:var(--prb-fs-body);line-height:1.62;font-feature-settings:"ss01","cv05";-webkit-font-smoothing:antialiased}
+::selection{background:var(--prb-navy-soft)}
+a{color:var(--prb-navy);text-underline-offset:2px}
+h1,h2,h3{font-family:var(--prb-serif);font-weight:600;line-height:1.1;letter-spacing:.2px}
+h2{font-size:var(--prb-fs-h2);margin:0 0 .5em}
+h3{font-size:var(--prb-fs-h3);font-weight:600;margin:1.6em 0 .4em;font-family:var(--prb-sans);letter-spacing:0}
+p{margin:0 0 1em}
+.prb-wrap{max-width:var(--prb-wide);margin:0 auto;padding:0 var(--prb-gut)}
+.prb-prose{max-width:var(--prb-prose)}
+.prb-sec{padding:var(--prb-sec) 0;border-top:1px solid var(--prb-line)}
+.prb-idx{font-family:var(--prb-serif);font-size:1.02rem;font-style:italic;font-weight:500;letter-spacing:.01em;color:var(--prb-ink3);display:block;margin-bottom:.7em;border-bottom:1px solid var(--prb-line);padding-bottom:.5em}
+
+/* header */
+.prb-top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--prb-fog) 88%,transparent);border-bottom:1px solid transparent;transition:border-color var(--prb-ease) .2s,box-shadow var(--prb-ease) .2s}
+.prb-top.prb-stuck{border-color:var(--prb-line);box-shadow:var(--prb-e1);background:color-mix(in srgb,var(--prb-fog) 94%,transparent)}
+.prb-bar{display:flex;align-items:center;gap:18px;height:58px;max-width:var(--prb-wide);margin:0 auto;padding:0 var(--prb-gut)}
+.prb-mark{display:flex;align-items:center;gap:9px;font-family:var(--prb-serif);font-size:1.32rem;font-weight:700;letter-spacing:.3px;color:var(--prb-ink);text-decoration:none;flex:none}
+.prb-nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 14px),transparent)}
+.prb-nav::-webkit-scrollbar{display:none}
+.prb-nav a{flex:none;font-size:var(--prb-fs-sm);color:var(--prb-ink2);text-decoration:none;padding:7px 10px;border-radius:var(--prb-r1);white-space:nowrap;transition:background var(--prb-ease) .15s,color var(--prb-ease) .15s}
+.prb-nav a:hover{background:var(--prb-surf2)}
+.prb-nav a.prb-here{color:var(--prb-navy);background:var(--prb-navy-soft)}
+.prb-theme{flex:none;font:inherit;font-size:var(--prb-fs-sm);background:transparent;border:1px solid var(--prb-line2);color:var(--prb-ink2);border-radius:var(--prb-r1);padding:6px 11px;cursor:pointer}
+.prb-theme:hover{border-color:var(--prb-navy);color:var(--prb-navy)}
+
+/* hero */
+.prb-hero{max-width:var(--prb-hero);margin:0 auto;padding:clamp(34px,6vw,70px) var(--prb-gut) 0}
+.prb-date{font-size:var(--prb-fs-ui);color:var(--prb-ink3);display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:1.1em}
+.prb-date b{color:var(--prb-navy);font-weight:600}
+.prb-dot{width:4px;height:4px;border-radius:50%;background:var(--prb-line2)}
+h1{font-size:var(--prb-fs-h1);margin:0 0 .4em;font-weight:700;max-width:16ch}
+.prb-lead{font-size:var(--prb-fs-lead);color:var(--prb-ink2);max-width:62ch}
+.prb-lead b{color:var(--prb-ink);font-weight:600}
+
+/* verdict card */
+.prb-card{margin:clamp(30px,5vw,52px) auto 0;max-width:var(--prb-hero);background:var(--prb-surf);border:1px solid var(--prb-line);border-radius:var(--prb-r3);box-shadow:var(--prb-e2);overflow:hidden}
+.prb-card-top{display:flex;gap:16px;align-items:flex-start;padding:clamp(18px,3vw,26px);border-bottom:1px solid var(--prb-line)}
+.prb-badge{align-self:center;margin-left:auto;font-size:var(--prb-fs-micro);letter-spacing:.14em;text-transform:uppercase;color:var(--prb-on-navy);background:var(--prb-navy-fill);padding:5px 10px;border-radius:var(--prb-r1);flex:none}
+.prb-glyph{width:52px;height:52px;flex:none}
+.prb-card-name{font-family:var(--prb-serif);font-size:1.6rem;font-weight:700;line-height:1.05}
+.prb-card-ex{display:block;font-family:var(--prb-sans);font-size:var(--prb-fs-micro);letter-spacing:.08em;text-transform:uppercase;color:var(--prb-ink3);margin-top:3px}
+.prb-dl{margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--prb-line)}
+.prb-dl>div{background:var(--prb-surf);padding:14px clamp(18px,3vw,26px)}
+.prb-dl dt{font-size:var(--prb-fs-micro);letter-spacing:.1em;text-transform:uppercase;color:var(--prb-ink3);margin-bottom:3px}
+.prb-dl dd{margin:0;font-family:var(--prb-serif);font-size:1.5rem;font-weight:600;line-height:1}
+.prb-dl dd small{font-family:var(--prb-sans);font-size:.5em;font-weight:500;color:var(--prb-ink3);letter-spacing:.02em}
+.prb-fit{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--prb-line);border-top:1px solid var(--prb-line)}
+.prb-fit>div{background:var(--prb-surf);padding:14px clamp(18px,3vw,26px);font-size:var(--prb-fs-ui)}
+.prb-fit h4{margin:0 0 .3em;font-family:var(--prb-sans);font-size:var(--prb-fs-sm);display:flex;align-items:center;gap:6px}
+.prb-fit ul{margin:0;padding-left:1.1em;color:var(--prb-ink2)}
+.prb-tag{font-size:.9em;font-weight:600}
+.prb-tag.prb-y{color:var(--prb-pass)}.prb-tag.prb-n{color:var(--prb-fail)}
+
+/* checklist table */
+.prb-tw{overflow-x:auto;border:1px solid var(--prb-line);border-radius:var(--prb-r2);background:var(--prb-surf)}
+table{border-collapse:collapse;width:100%;font-size:var(--prb-fs-ui)}
+caption{text-align:left;font-size:var(--prb-fs-sm);color:var(--prb-ink3);padding:11px 14px;border-bottom:1px solid var(--prb-line)}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--prb-line);vertical-align:top}
+thead th{font-family:var(--prb-sans);font-weight:600;font-size:var(--prb-fs-sm);color:var(--prb-ink2);position:sticky;top:58px;background:var(--prb-surf2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.prb-ck td:first-child{font-weight:600;white-space:nowrap}
+.prb-num{display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;background:var(--prb-navy-soft);color:var(--prb-navy);border-radius:var(--prb-r1);font-size:var(--prb-fs-sm);font-weight:700;margin-right:7px}
+.prb-pill{display:inline-flex;align-items:center;gap:5px;font-size:var(--prb-fs-sm);font-weight:600;padding:2px 8px;border-radius:var(--prb-r1);white-space:nowrap}
+.prb-pill.prb-y{background:var(--prb-pass-soft);color:var(--prb-pass)}
+.prb-pill.prb-n{background:var(--prb-fail-soft);color:var(--prb-fail)}
+.prb-pill.prb-h{background:var(--prb-hold-soft);color:var(--prb-hold)}
+
+/* figures */
+.prb-fig{margin:1.6em 0;border:1px solid var(--prb-line);border-radius:var(--prb-r2);background:var(--prb-surf);overflow:hidden}
+.prb-fig svg{display:block;width:100%;height:auto}
+.prb-fig figcaption{font-size:var(--prb-fs-sm);color:var(--prb-ink3);padding:10px 14px;border-top:1px solid var(--prb-line)}
+.prb-vizpad{padding:clamp(14px,3vw,22px)}
+.prb-twin{border-top:1px solid var(--prb-line)}
+.prb-twin table{font-size:var(--prb-fs-sm)}
+
+/* steps */
+.prb-steps{counter-reset:s;list-style:none;margin:1.4em 0;padding:0;display:grid;gap:10px}
+.prb-steps li{position:relative;padding:14px 16px 14px 52px;background:var(--prb-surf);border:1px solid var(--prb-line);border-radius:var(--prb-r2);font-size:var(--prb-fs-ui);color:var(--prb-ink2)}
+.prb-steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:13px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:var(--prb-navy-fill);color:var(--prb-on-navy);border-radius:50%;font-weight:700;font-size:var(--prb-fs-sm)}
+.prb-steps li b{color:var(--prb-ink)}
+
+/* capsule note */
+.prb-flags{margin:1.3em 0;padding:16px 18px;background:var(--prb-fail-soft);border:1px solid color-mix(in srgb,var(--prb-fail) 32%,transparent);border-radius:var(--prb-r2);font-size:var(--prb-fs-ui)}
+.prb-flags h4{margin:0 0 .4em;font-size:var(--prb-fs-sm);color:var(--prb-fail);letter-spacing:.04em;text-transform:uppercase}
+.prb-flags ul{margin:0;padding-left:1.15em;color:var(--prb-ink2)}
+
+/* details */
+.prb-q{border:1px solid var(--prb-line);border-radius:var(--prb-r2);background:var(--prb-surf);margin:10px 0;overflow:hidden}
+.prb-q summary{cursor:pointer;padding:14px 44px 14px 16px;font-weight:600;font-size:var(--prb-fs-ui);position:relative;list-style:none}
+.prb-q summary::-webkit-details-marker{display:none}
+.prb-q summary::after{content:"+";position:absolute;right:16px;top:12px;font-size:1.3rem;color:var(--prb-navy);transition:transform var(--prb-ease) .2s}
+.prb-q[open] summary::after{transform:rotate(45deg)}
+.prb-ans{padding:0 16px 15px;color:var(--prb-ink2);font-size:var(--prb-fs-ui)}
+
+/* channel */
+.prb-chan{background:var(--prb-navy-soft);border:1px solid color-mix(in srgb,var(--prb-navy) 30%,transparent);border-radius:var(--prb-r3);padding:clamp(22px,4vw,34px)}
+.prb-chan a.prb-cta{display:inline-flex;align-items:center;gap:9px;margin-top:.6em;background:var(--prb-navy-fill);color:var(--prb-on-navy);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:var(--prb-r2)}
+.prb-chan a.prb-cta:hover{filter:brightness(1.07)}
+
+/* care */
+.prb-care{font-size:var(--prb-fs-sm);color:var(--prb-ink3);border:1px dashed var(--prb-line2);border-radius:var(--prb-r2);padding:16px 18px;margin-top:var(--prb-sec)}
+.prb-care b{color:var(--prb-ink2)}
+
+/* footer */
+.prb-foot{border-top:1px solid var(--prb-line);background:var(--prb-surf);margin-top:var(--prb-sec)}
+.prb-foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;max-width:var(--prb-wide);margin:0 auto;padding:var(--prb-sec) var(--prb-gut)}
+.prb-foot h5{font-family:var(--prb-sans);font-size:var(--prb-fs-sm);letter-spacing:.08em;text-transform:uppercase;color:var(--prb-ink3);margin:0 0 .8em}
+.prb-foot p,.prb-foot li{font-size:var(--prb-fs-sm);color:var(--prb-ink3)}
+.prb-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.prb-foot a{color:var(--prb-ink2);text-decoration:none}
+.prb-foot a:hover{color:var(--prb-navy)}
+.prb-copy{border-top:1px solid var(--prb-line);padding:16px var(--prb-gut);text-align:center;font-size:var(--prb-fs-micro);color:var(--prb-ink3)}
+
+mark.prb-k{background:var(--prb-hold-soft);color:var(--prb-ink);padding:0 3px;border-radius:3px}
+.prb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:720px){
+ .prb-dl,.prb-fit{grid-template-columns:1fr}
+ .prb-card-top{flex-wrap:wrap}.prb-badge{margin-left:0;order:-1}
+ .prb-foot-grid{grid-template-columns:1fr;gap:22px}
+ thead th{position:static}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:1ms !important}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://litsenzionnye-sloty28.github.io/#page","headline":"Лицензионные слоты 2026: чек-лист из девяти проверок подлинности сборки","description":"Девять проверок, по которым оригинал слота от провайдера отличают от клона: сертификат лаборатории, домен загрузки, версия RTP, подпись раунда и списки подделок.","inLanguage":"ru","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Organization","name":"Редакция «Проба»"},"publisher":{"@type":"Organization","name":"Редакция «Проба»"},"mainEntityOfPage":"https://litsenzionnye-sloty28.github.io/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","@id":"https://litsenzionnye-sloty28.github.io/#howto-sverka","name":"Сверка сборки слота за семь шагов","totalTime":"PT9M","step":[
+{"@type":"HowToStep","position":1,"name":"Откройте инфо-окно игры.","text":"В запущенной игре найдите кнопку «i» или «Правила»: там указаны название тайтла, провайдер, версия и значение RTP."},
+{"@type":"HowToStep","position":2,"name":"Сверьте RTP с публичным релизом.","text":"Сравните указанный процент с официальным диапазоном выпуска у разработчика софта; заниженная сборка выдаёт клон или урезанную версию."},
+{"@type":"HowToStep","position":3,"name":"Посмотрите домен загрузки.","text":"Через исходный код страницы проверьте, с какого домена грузится iframe игры: он должен принадлежать провайдеру или его заявленной сети доставки."},
+{"@type":"HowToStep","position":4,"name":"Найдите номер сертификата лаборатории.","text":"В подвале игры или на странице провайдера отыщите ссылку на отчёт GLI, eCOGRA, iTech Labs или BMM с номером, покрывающим этот тайтл."},
+{"@type":"HowToStep","position":5,"name":"Проверьте аккредитацию лаборатории.","text":"Убедитесь, что лаборатория признана регулятором (MGA, UKGC, GCB Кюрасао); непризнанная подпись не даёт гарантии честности ГСЧ."},
+{"@type":"HowToStep","position":6,"name":"Сделайте один раунд и откройте историю.","text":"В истории ставок должен быть идентификатор раунда формата провайдера с именем студии и версией движка — метка подлинного сеанса."},
+{"@type":"HowToStep","position":7,"name":"Проверьте игру по спискам клонов.","text":"Сверьте тайтл и домен с бюллетенями провайдеров и базами поддельных игр; совпадение с записью о клоне закрывает проверку."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://litsenzionnye-sloty28.github.io/#faq","mainEntity":[
+{"@type":"Question","name":"Чем лицензионный слот отличается от клона с виду?","acceptedAnswer":{"@type":"Answer","text":"Внешне клон повторяет графику и звук оригинала, поэтому отличие лежит не в картинке, а в метаданных: номер сертификата лаборатории на конкретный тайтл, домен загрузки, принадлежащий провайдеру, версия RTP из официального релиза и идентификатор раунда формата студии. Клон занижает RTP, грузится со стороннего домена и не имеет отчёта лаборатории на этот билд."}},
+{"@type":"Question","name":"Где в игре смотреть версию RTP?","acceptedAnswer":{"@type":"Answer","text":"Версия RTP указана в инфо-окне игры — кнопка «i» или «Правила» внутри запущенного тайтла, в разделе о возврате игроку. Там же стоит имя провайдера и номер версии. Если процента нет вовсе или он ниже официального диапазона выпуска без пометки, это сигнал урезанной сборки."}},
+{"@type":"Question","name":"Что означает сертификат GLI-19 или eCOGRA на слоте?","acceptedAnswer":{"@type":"Answer","text":"Это отчёт независимой лаборатории о том, что генератор случайных чисел и заявленный RTP конкретной версии игры проверены по стандарту. GLI-19 относится к онлайн-играм, eCOGRA, iTech Labs и BMM выдают свои отчёты. Важен номер отчёта на этот тайтл и аккредитация самой лаборатории регулятором, а не просто логотип на странице."}},
+{"@type":"Question","name":"Можно ли доверять слоту без сертификата лаборатории?","acceptedAnswer":{"@type":"Answer","text":"Отсутствие отчёта лаборатории переводит пункт в состояние «нет»: честность ГСЧ и заявленный RTP ничем не подтверждены. Слот может оказаться и оригиналом с непубличным отчётом, но проверить это игрок не способен, поэтому пункт остаётся непройденным до появления номера отчёта."}},
+{"@type":"Question","name":"Бывают ли у одного слота разные версии RTP?","acceptedAnswer":{"@type":"Answer","text":"Да, разработчики выпускают один тайтл в нескольких математических сборках — например около 96 %, 94 %, 92 % и ниже, — и оператор выбирает версию при интеграции. Поэтому лицензионный оригинал и урезанный релиз одной игры различаются именно числом RTP в инфо-окне, а не названием."}},
+{"@type":"Question","name":"Есть ли в России лицензия на слоты?","acceptedAnswer":{"@type":"Answer","text":"Федеральный закон 244-ФЗ разрешает азартные игры только в четырёх игорных зонах офлайн, онлайн-казино в России вне закона. Поэтому «лицензионный слот» означает сертификацию самого софта зарубежной лабораторией и лицензию провайдера, а не российскую лицензию оператора. Любое обещание российской онлайн-лицензии ложно."}}
+]}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="prb-m" viewBox="0 0 52 52"><rect x="1" y="1" width="50" height="50" rx="12" fill="var(--prb-navy)"/><path d="M26 8l15 7v11c0 10-6.4 16.5-15 19-8.6-2.5-15-9-15-19V15z" fill="none" stroke="var(--prb-on-navy)" stroke-width="2.2"/><path d="M19 26.5l5 5 10-11" fill="none" stroke="var(--prb-on-navy)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="prb-top" id="prb-top">
+<div class="prb-bar">
+<a href="#prb-top" class="prb-mark"><svg width="26" height="26" aria-hidden="true"><use href="#prb-m"/></svg>Проба</a>
+<nav class="prb-nav" aria-label="Разделы">
+<a href="#prb-list">Чек-лист</a>
+<a href="#prb-cert">Сертификат</a>
+<a href="#prb-origin">Домен</a>
+<a href="#prb-rtp">RTP</a>
+<a href="#prb-round">Раунд</a>
+<a href="#prb-clones">Клоны</a>
+<a href="#prb-total">Итог</a>
+<a href="#prb-faq">Вопросы</a>
+</nav>
+<button class="prb-theme" id="prb-theme" type="button" aria-label="Сменить тему">Тема</button>
+</div>
+</header>
+
+<main>
+<section class="prb-hero" aria-labelledby="prb-h1">
+<p class="prb-date">Обновлено <b>1 октября 2026</b> <span class="prb-dot"></span> метод сверки, не реклама <span class="prb-dot"></span> Москва</p>
+<h1 id="prb-h1">Лицензионные слоты 2026: чек-лист из девяти проверок оригинала против клона</h1>
+<p class="prb-lead">Клон повторяет картинку оригинала пиксель в пиксель, поэтому подлинность решают не графика и не отзывы, а <b>метаданные сборки</b>: номер отчёта лаборатории на этот тайтл, домен загрузки, версия RTP и подпись раунда. Ниже — девять пунктов с порогом «годен / нет», по которым игрок сам отличает сертифицированный релиз от урезанного скина на сегодня.</p>
+
+<article class="prb-card" aria-label="Модельная сверка — расчётный пример">
+<div class="prb-card-top">
+<svg class="prb-glyph" viewBox="0 0 52 52" aria-hidden="true"><use href="#prb-m"/></svg>
+<div>
+<div class="prb-card-name">«Сапфир-20»<span class="prb-card-ex">условный тайтл · расчётный пример сверки</span></div>
+</div>
+<span class="prb-badge">Разбор редакции</span>
+</div>
+<dl class="prb-dl">
+<div><dt>Пройдено пунктов</dt><dd>7<small> / 9</small></dd></div>
+<div><dt>Версия RTP в окне</dt><dd>96,1<small> %</small></dd></div>
+<div><dt>Отчёт лаборатории</dt><dd>есть<small> · на билд</small></dd></div>
+<div><dt>Домен загрузки</dt><dd>свой<small> · CDN студии</small></dd></div>
+</dl>
+<div class="prb-fit">
+<div><h4><span class="prb-tag prb-y">Годен, если</span></h4><ul><li>номер отчёта покрывает этот тайтл и версию;</li><li>RTP совпал с официальным релизом;</li><li>раунд подписан форматом провайдера.</li></ul></div>
+<div><h4><span class="prb-tag prb-n">Нет, если</span></h4><ul><li>«сертификат» — картинка без номера;</li><li>RTP занижен или не указан;</li><li>игра грузится со стороннего домена.</li></ul></div>
+</div>
+</article>
+<p class="prb-lead" style="margin-top:1.4em;font-size:var(--prb-fs-ui);color:var(--prb-ink3)">Числа в карточке — расчётный пример разбора, а не замер конкретного заведения. Ни одного реального оператора редакция здесь не называет и не оценивает.</p>
+</section>
+
+<!-- how the checklist works -->
+<section class="prb-sec" id="prb-how">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Как читать пробу · 00</span>
+<h2>Проба сборки: девять проверок и три исхода у каждой</h2>
+<p>Слот — это не одна картинка, а запущенный в браузере экземпляр программы: графика лежит на одном сервере, математика выпуска зашита в движок, а честность вращений подтверждает отдельный отчёт лаборатории. Клон берёт внешний слой оригинала, подменяет движок на свой и ставит заниженный возврат, рассчитывая на то, что игрок смотрит только на барабаны. Проба разбирает именно внутренний слой: откуда грузится код, какой возврат объявлен, кто и когда проверил генератор.</p>
+<p>Каждый из девяти пунктов даёт один из трёх исходов. <b class="prb-tag prb-y">Годен</b> — признак на месте и совпадает с публичной записью. <b class="prb-tag prb-n">Нет</b> — признак противоречит заявленному: процент занижен, домен чужой, номера отчёта не существует. Третий исход, <b class="prb-tag" style="color:var(--prb-hold)">не проверить</b>, означает, что данных в интерфейсе нет и пункт остаётся открытым; он не оправдывает игру, а откладывает вывод. Порог прост: достаточно одного твёрдого «нет» среди пунктов происхождения, чтобы считать тайтл неподтверждённым, сколько бы галочек ни стояло рядом.</p>
+<p>Пункты разбиты на два слоя. Первый — <b>происхождение кода</b>: сертификат лаборатории, аккредитация этой лаборатории, домен загрузки. Второй — <b>совпадение параметров</b>: версия RTP, подпись раунда, версия движка, тип генератора, отсутствие в списках подделок, совпадение математики с паспортом игры. Слой происхождения весомее: оригинальный код с полным отчётом не превращается в клон из-за одной спорной цифры, а вот безупречная на вид обёртка без отчёта лаборатории доверия не заслуживает.</p>
+</div>
+</section>
+
+<!-- the checklist table -->
+<section class="prb-sec" id="prb-list">
+<div class="prb-wrap">
+<span class="prb-idx">Девять пунктов · 01</span>
+<h2 style="max-width:18ch">Лист сверки: что считается «годен» и что сразу «нет»</h2>
+<p class="prb-prose">Таблица — ядро разбора. Левая колонка называет признак, средняя говорит, где его искать в интерфейсе игры, правые две задают порог. Признаки идут по убыванию веса: первые три относятся к происхождению кода, остальные проверяют совпадение объявленных параметров.</p>
+<div class="prb-tw">
+<table>
+<caption>Девять пунктов пробы лицензионного слота. Пороги «годен / нет», адрес каждого признака в интерфейсе. Расчётная схема редакции «Проба», 2026.</caption>
+<thead><tr><th>Признак</th><th>Где искать</th><th>Годен</th><th>Нет</th></tr></thead>
+<tbody>
+<tr class="prb-ck"><td><span class="prb-num">1</span>Сертификат лаборатории</td><td>Подвал игры, страница провайдера</td><td><span class="prb-pill prb-y">да</span> номер отчёта GLI-19 / eCOGRA / iTech Labs / BMM покрывает тайтл и версию</td><td><span class="prb-pill prb-n">нет</span> логотип-картинка без номера или отчёт на другую игру</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">2</span>Аккредитация лаборатории</td><td>Реестр регулятора</td><td><span class="prb-pill prb-y">да</span> лаборатория признана MGA, UKGC или GCB Кюрасао</td><td><span class="prb-pill prb-n">нет</span> «лаборатория» без аккредитации или вымышленная</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">3</span>Домен загрузки игры</td><td>Исходный код, src у iframe</td><td><span class="prb-pill prb-y">да</span> код грузится с домена провайдера или его заявленной сети доставки</td><td><span class="prb-pill prb-n">нет</span> iframe тянется со стороннего домена-реплики</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">4</span>Версия RTP</td><td>Инфо-окно, раздел «Правила»</td><td><span class="prb-pill prb-y">да</span> процент из официального диапазона релиза, указан явно</td><td><span class="prb-pill prb-n">нет</span> занижен без пометки или отсутствует</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">5</span>Подпись раунда</td><td>История ставок</td><td><span class="prb-pill prb-y">да</span> идентификатор раунда формата провайдера, имя студии, версия</td><td><span class="prb-pill prb-n">нет</span> чужой формат номера или истории нет вовсе</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">6</span>Версия движка</td><td>Инфо-окно, дата сертификата</td><td><span class="prb-pill prb-y">да</span> номер версии и дата совпадают с публичной записью</td><td><span class="prb-pill prb-h">?</span> версии не видно — пункт открыт</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">7</span>Тип генератора</td><td>Отчёт лаборатории</td><td><span class="prb-pill prb-y">да</span> сертифицированный ГСЧ привязан к номеру отчёта</td><td><span class="prb-pill prb-n">нет</span> «честность гарантирует провайдер» без отчёта</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">8</span>Нет в списках клонов</td><td>Бюллетени студий, базы подделок</td><td><span class="prb-pill prb-y">да</span> тайтл и домен не числятся в записях о клонах</td><td><span class="prb-pill prb-n">нет</span> совпадение с записью о поддельной сборке</td></tr>
+<tr class="prb-ck"><td><span class="prb-num">9</span>Совпадение математики</td><td>Правила: линии, макс. выигрыш</td><td><span class="prb-pill prb-y">да</span> линии, макс. множитель xN и волатильность как в паспорте игры</td><td><span class="prb-pill prb-n">нет</span> другой макс. выигрыш — признак скина</td></tr>
+</tbody>
+</table>
+</div>
+<p class="prb-prose" style="margin-top:1.3em">Правило чтения листа: пункты 1–3 и 7 — стоп-признаки. Любой из них в состоянии «нет» закрывает вопрос, потому что рушит происхождение кода и честность вращений. Пункты 4–6, 8–9 уточняют картину: их «нет» по отдельности означает урезанную или подменённую сборку, а два и более вместе почти всегда указывают на клон.</p>
+</div>
+</section>
+
+<!-- capsule 1: certificate -->
+<section class="prb-sec" id="prb-cert">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Пункт 1–2 · происхождение</span>
+<h2>Сертификат лаборатории: номер отчёта важнее логотипа</h2>
+<p>Отчёт независимой лаборатории — первая проба лицензионного слота, и ценность у неё даёт <b>номер</b>, а не значок на странице. Четыре имени встречаются чаще прочих: Gaming Laboratories International с профильным стандартом GLI-19 для онлайн-игр, eCOGRA, iTech Labs и BMM Testlabs. Каждая выдаёт отчёт на конкретный тайтл и версию движка: в документе зафиксированы проверенный генератор случайных чисел, объявленный возврат игроку и дата испытания. Логотип лаборатории без ссылки на отчёт с номером не значит ничего — его копируют на клон за минуту.</p>
+<p>Порог пункта бинарен. <b class="prb-tag prb-y">Годен</b> — в подвале игры или на странице студии-разработчика есть ссылка на отчёт, где название тайтла и версия совпадают с запущенной. <b class="prb-tag prb-n">Нет</b> — «сертификат» открывается картинкой, ведёт на отчёт по другой игре либо на лабораторию, которой нет в списке признанных. Второй пункт листа проверяет саму лабораторию: её аккредитацию подтверждают регуляторы — Мальтийское управление MGA, британская UKGC, Контрольная палата Кюрасао GCB. Подпись конторы, которую ни один регулятор не признаёт, равна отсутствию подписи.</p>
+<p>Важно понимать объём отчёта. Стандарт GLI-19 описывает именно интернет-системы игр и охватывает поведение генератора, корректность выплат и соответствие объявленному возврату; у Gaming Laboratories есть и смежные документы на кассовые и серверные части, но для слота решает проверка самой игры. Отчёт выдаётся не навсегда: лаборатории проводят периодические повторные испытания, и честная студия обновляет номер при смене версии движка. Поэтому дата отчёта и версия тайтла в инфо-окне должны хотя бы не противоречить друг другу — отчёт, выписанный раньше, чем появилась запущенная версия, этот билд не покрывает.</p>
+<p>Отдельная ловушка — переходный режим Кюрасао по закону LOK: с 2024 года прямые лицензии сменили прежнюю мастер-субмодель, и часть площадок ссылается на старые бумаги. Для софта это вторично: честность вращений подтверждает лаборатория, а не тип разрешения оператора. Поэтому в пробе слота отчёт лаборатории стоит выше любой строки о лицензии заведения. Официальные реестры лабораторий открыты: <a href="https://gaminglabs.com/" rel="nofollow noopener" target="_blank">GLI</a>, <a href="https://ecogra.org/" rel="nofollow noopener" target="_blank">eCOGRA</a> и <a href="https://www.itechlabs.com/" rel="nofollow noopener" target="_blank">iTech Labs</a> публикуют списки сертифицированных продуктов, по которым номер отчёта сверяется за минуту.</p>
+<div class="prb-flags">
+<h4>Красные флаги пункта</h4>
+<ul>
+<li>«Проверено независимым аудитом» без имени лаборатории и номера;</li>
+<li>дата отчёта старше версии движка в инфо-окне — документ не на этот билд;</li>
+<li>печать несуществующей конторы с названием, похожим на GLI или eCOGRA.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- capsule 2: origin domain + schema svg -->
+<section class="prb-sec" id="prb-origin">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Пункт 3 · происхождение</span>
+<h2>Домен загрузки: откуда на самом деле приходит код игры</h2>
+<p>Запущенный тайтл встроен в страницу через iframe, и у этого iframe есть адрес источника. У лицензионного релиза код приходит с домена самой студии-разработчика или с её заявленной сети доставки контента — CDN, который студия указывает в документации для интеграторов. Клон грузит подменённый движок со стороннего домена-реплики, нередко с опечаткой в имени или в чужой зоне. Это самый технический, но и самый надёжный признак: обёртку скопировать легко, а выдать чужой сервер за официальный источник — нет.</p>
+<figure class="prb-fig" role="group" aria-labelledby="prb-s1t prb-s1d">
+<div class="prb-vizpad">
+<svg viewBox="0 0 680 230" role="img" aria-labelledby="prb-s1t prb-s1d">
+<title id="prb-s1t">Схема проверки домена загрузки слота</title>
+<desc id="prb-s1d">Браузер запрашивает iframe игры, и адрес источника ведёт либо на домен провайдера, либо на сторонний сервер клона.</desc>
+<defs><marker id="prb-ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9z" fill="var(--prb-line2)"/></marker></defs>
+<rect x="18" y="92" width="150" height="46" rx="9" fill="var(--prb-surf2)" stroke="var(--prb-line2)"/>
+<text x="93" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="var(--prb-ink)">Браузер игрока</text>
+<text x="93" y="129" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="var(--prb-ink3)">запрос iframe</text>
+<line x1="168" y1="115" x2="252" y2="115" stroke="var(--prb-line2)" stroke-width="2" marker-end="url(#prb-ar)"/>
+<rect x="254" y="88" width="168" height="54" rx="9" fill="var(--prb-navy-soft)" stroke="var(--prb-navy)"/>
+<text x="338" y="109" text-anchor="middle" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" fill="var(--prb-ink)">Адрес источника</text>
+<text x="338" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="var(--prb-ink3)">src у iframe · developer tools</text>
+<line x1="422" y1="100" x2="506" y2="58" stroke="var(--prb-line2)" stroke-width="2" marker-end="url(#prb-ar)"/>
+<line x1="422" y1="130" x2="506" y2="172" stroke="var(--prb-line2)" stroke-width="2" marker-end="url(#prb-ar)"/>
+<rect x="508" y="30" width="154" height="56" rx="9" fill="var(--prb-pass-soft)" stroke="var(--prb-pass)"/>
+<text x="585" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="var(--prb-pass)">Домен провайдера</text>
+<text x="585" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="var(--prb-ink2)">оригинал · годен</text>
+<rect x="508" y="146" width="154" height="56" rx="9" fill="var(--prb-fail-soft)" stroke="var(--prb-fail)"/>
+<text x="585" y="168" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="var(--prb-fail)">Сторонний домен</text>
+<text x="585" y="186" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="var(--prb-ink2)">клон · нет</text>
+</svg>
+</div>
+<figcaption>Схема редакции «Проба», 2026. Проверяется адрес источника iframe, а не адрес самой страницы заведения.</figcaption>
+<div class="prb-twin prb-tw">
+<table>
+<caption>Те же три узла проверки домена в виде таблицы</caption>
+<thead><tr><th>Узел</th><th>Где смотреть</th><th>Исход</th></tr></thead>
+<tbody>
+<tr><td>Браузер игрока</td><td>запрос iframe</td><td>старт</td></tr>
+<tr><td>Адрес источника</td><td>src у iframe в коде страницы</td><td>развилка</td></tr>
+<tr><td>Домен провайдера</td><td>совпал с документацией студии</td><td><span class="prb-pill prb-y">годен</span></td></tr>
+<tr><td>Сторонний домен</td><td>чужая зона, опечатка в имени</td><td><span class="prb-pill prb-n">нет</span></td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<p>Домены сетей доставки устроены по-разному, и это создаёт путаницу. Крупная студия раздаёт игру не с главного сайта, а с технического поддомена или отдельной зоны, адрес которой выглядит незнакомо, хотя и принадлежит разработчику. Отличить его от клона помогают две вещи: имя источника согласовано с именем студии или её известной сети, а сертификат TLS этого домена выписан на организацию-разработчика, а не на безымянного владельца. Клон, наоборот, прячет источник за свежим доменом в дешёвой зоне, с сертификатом, который подтверждает только шифрование канала, но не владельца. Замок в адресной строке тут ничего не доказывает — он есть и у поддельного сервера.</p>
+<p>Посмотреть источник проще, чем кажется: правый клик по области игры и «Исходный код» либо вкладка сети в инструментах разработчика покажут, с какого адреса пришёл фрейм. Полезный ориентир — совпадение с именем студии из инфо-окна. Если игра объявляет одного разработчика, а код грузится с домена, не имеющего к нему отношения, пункт в состоянии <b class="prb-tag prb-n">нет</b>. Когда определить домен не удаётся — скрыт за прокси заведения — пункт честнее отметить как открытый и опереться на сертификат и версию RTP.</p>
+</div>
+</section>
+
+<!-- capsule 3: RTP builds + bar chart -->
+<section class="prb-sec" id="prb-rtp">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Пункт 4 · параметры</span>
+<h2>Версия RTP: одна игра выходит в нескольких сборках возврата</h2>
+<p>Возврат игроку — главная цифра, которую подменяет клон и урезает недобросовестный интегратор. Разработчики давно выпускают один тайтл в нескольких математических версиях: высокая сборка около 96 %, а рядом релизы на 94 %, 92 % и ниже, вплоть до 88 %. Оператор выбирает версию при встраивании, и внешне барабаны не меняются — различается только число в инфо-окне. Поэтому лицензионный оригинал и обрезанный выпуск одной игры отличаются не названием, а объявленным процентом.</p>
+<figure class="prb-fig" role="group" aria-labelledby="prb-s2t prb-s2d">
+<div class="prb-vizpad">
+<svg viewBox="0 0 680 250" role="img" aria-labelledby="prb-s2t prb-s2d">
+<title id="prb-s2t">Четыре сборки RTP одного слота на обрезанной шкале</title>
+<desc id="prb-s2d">Столбцы показывают возврат четырёх версий одного тайтла от высокой сборки к урезанной на шкале от 85 до 100 процентов.</desc>
+<g font-family="Inter,sans-serif">
+<line x1="150" y1="20" x2="150" y2="196" stroke="var(--prb-line)"/>
+<line x1="150" y1="196" x2="660" y2="196" stroke="var(--prb-line2)"/>
+<!-- gridlines at 85,90,95,100 -> x=150 + (v-85)/15*500 -->
+<g stroke="var(--prb-line)" stroke-dasharray="3 4" font-size="11" fill="var(--prb-ink3)">
+<line x1="150" y1="20" x2="150" y2="196"/><text x="150" y="214" text-anchor="middle">85%</text>
+<line x1="316.7" y1="20" x2="316.7" y2="196"/><text x="316.7" y="214" text-anchor="middle">90%</text>
+<line x1="483.3" y1="20" x2="483.3" y2="196"/><text x="483.3" y="214" text-anchor="middle">95%</text>
+<line x1="650" y1="20" x2="650" y2="196"/><text x="650" y="214" text-anchor="middle">100%</text>
+</g>
+<!-- bars: x width = (v-85)/15*500 -->
+<g font-size="13" font-weight="600">
+<rect x="150" y="30" width="370" height="26" rx="4" fill="var(--prb-g1)"/><text x="18" y="47" fill="var(--prb-ink2)">Сборка A</text><text x="528" y="48" fill="var(--prb-ink)">96,1 %</text>
+<rect x="150" y="72" width="300" height="26" rx="4" fill="var(--prb-g2)"/><text x="18" y="89" fill="var(--prb-ink2)">Сборка B</text><text x="458" y="90" fill="var(--prb-ink)">94,0 %</text>
+<rect x="150" y="114" width="233.3" height="26" rx="4" fill="var(--prb-g3)"/><text x="18" y="131" fill="var(--prb-ink2)">Сборка C</text><text x="391" y="132" fill="var(--prb-ink)">92,0 %</text>
+<rect x="150" y="156" width="100" height="26" rx="4" fill="var(--prb-fail)"/><text x="18" y="173" fill="var(--prb-ink2)">Сборка D</text><text x="258" y="174" fill="var(--prb-fail)">88,0 % ✕</text>
+</g>
+</g>
+</svg>
+</div>
+<figcaption>Условный пример линейки одного тайтла. Шкала обрезана до 85–100 % для наглядности; «✕» помечает сборку, которую в лицензионном релизе не ждут. Схема редакции «Проба», 2026.</figcaption>
+<div class="prb-twin prb-tw">
+<table>
+<caption>Те же четыре сборки в числах</caption>
+<thead><tr><th>Сборка</th><th>RTP</th><th>Отклонение от A</th><th>Оценка</th></tr></thead>
+<tbody>
+<tr><td>Сборка A</td><td>96,1 %</td><td>—</td><td><span class="prb-pill prb-y">годен</span></td></tr>
+<tr><td>Сборка B</td><td>94,0 %</td><td>−2,1 п.п.</td><td><span class="prb-pill prb-h">проверить релиз</span></td></tr>
+<tr><td>Сборка C</td><td>92,0 %</td><td>−4,1 п.п.</td><td><span class="prb-pill prb-h">проверить релиз</span></td></tr>
+<tr><td>Сборка D</td><td>88,0 %</td><td>−8,1 п.п.</td><td><span class="prb-pill prb-n">нет</span></td></tr>
+</tbody>
+</table>
+</div>
+</figure>
+<p>Рядом с возвратом в паспорте игры стоят ещё два параметра, которые клон часто оставляет без внимания, — волатильность и частота выпадения. Возврат говорит, какая доля ставок возвращается в среднем на огромной дистанции в миллионы вращений; волатильность описывает, насколько неровно это происходит, а частота выпадения — как часто вообще случается оплачиваемая комбинация. Подлинная сборка объявляет все три согласованно: высокий возврат не бывает при произвольной волатильности. Когда возврат занижен, а остальные параметры скопированы из паспорта оригинала без правки, несогласованность сама выдаёт подмену движка.</p>
+<p>Порог пункта: <b class="prb-tag prb-y">годен</b>, когда процент в инфо-окне попадает в официальный диапазон выпуска у разработчика и указан явно. <b class="prb-tag prb-n">Нет</b>, когда RTP занижен относительно публичного релиза без всякой пометки или не указан вовсе — прятать возврат лицензионной игре незачем. Разница в два пункта процента на дистанции в десятки тысяч вращений заметна по балансу, и сверка числа с паспортом игры у разработчика стоит минуты, а экономит ощутимо больше. Где искать: инфо-окно, раздел о возврате игроку, рядом с именем студии и версией.</p>
+</div>
+</section>
+
+<!-- capsule 4: round signature -->
+<section class="prb-sec" id="prb-round">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Пункт 5–6 · параметры</span>
+<h2>Подпись раунда: что история ставок говорит о подлинности сеанса</h2>
+<p>Один реальный раунд даёт больше, чем любые заверения на витрине. У лицензионного слота каждое вращение получает идентификатор формата провайдера — строку определённой длины и структуры, по которой студия находит сессию в своей системе. В истории ставок рядом стоят имя разработчика и версия движка. Это подпись подлинного сеанса: клон либо выдаёт номер чужого формата, либо не ведёт истории вовсе, потому что его движок не связан с инфраструктурой студии.</p>
+<p>Порог шестого пункта мягче: версию движка и дату сертификата видно не всегда, и при их отсутствии пункт честнее держать открытым, чем записывать «нет». Но когда версия указана, она должна совпадать с публичной записью лаборатории — по этой паре «версия плюс дата» отчёт привязывается к конкретному билду. Расхождение означает, что перед игроком другой выпуск, и к нему относятся выводы о версии RTP из предыдущего пункта.</p>
+<p>Формат идентификатора у каждой студии свой, но общее есть: это длинная строка фиксированной структуры, а не короткий порядковый номер. По ней служба разработчика поднимает весь ход раунда — начальное состояние, результат генератора, выплату. Клон такой строки предъявить не может, потому что его движок не записывает раунды в систему студии; в лучшем случае он подставляет случайный набор символов, который ни с чем не сверяется. Оттого длина и постоянство формата идентификатора от раунда к раунду — косвенный, но полезный признак подлинного сеанса.</p>
+<p>Практический ход: сделайте минимальную ставку, откройте историю и разверните запись раунда. Подлинная строка содержит идентификатор, имя студии и чаще всего отметку версии; поддельная ограничивается суммой и временем. Идентификатор раунда к тому же нужен для спора: без него обращение в поддержку о неверном начислении повиснет, потому что сослаться не на что. Так пятый пункт пробы заодно страхует и будущую жалобу.</p>
+</div>
+</section>
+
+<!-- capsule 5: clone lists -->
+<section class="prb-sec" id="prb-clones">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Пункт 7–8 · параметры</span>
+<h2>Списки клонов и метки студий: где подделку уже опознали до вас</h2>
+<p>Седьмой пункт проверяет сердце честности — генератор случайных чисел. Сертифицированный ГСЧ привязан к номеру отчёта лаборатории: именно он подтверждает, что исход вращения не предрешён движком. Формула «честность гарантирует провайдер» без ссылки на отчёт переводит пункт в <b class="prb-tag prb-n">нет</b>: гарантия без независимой проверки ничего не весит, а подменённый генератор — главный смысл существования клона. Поэтому седьмой пункт смыкается с первым: нет отчёта лаборатории — нет и подтверждённого генератора.</p>
+<p>Восьмой пункт опирается на чужую работу. Студии-разработчики ведут бюллетени о поддельных сборках своих игр и доменах, которые их раздают; базы жалоб и тематические форумы собирают списки клонов, пойманных за заниженным возвратом или зависшими выплатами. Сверка проста: совпал тайтл или домен с записью о подделке — пункт закрыт, и остальные галочки уже неважны. Отсутствие в списках не делает игру лицензионной само по себе, но присутствие в них — твёрдое «нет».</p>
+<p>Понятно и зачем клон вообще существует. Поддельная сборка берёт готовую графику оригинала, ставит заниженный возврат и забирает разницу себе: на той же внешности игрок теряет быстрее, не замечая подмены. Иногда клон идёт дальше и подменяет исход напрямую, без честного генератора, — тогда никакой возврат не гарантирован вовсе. Оба случая закрываются одним и тем же слоем пробы: отчёт лаборатории на конкретный билд и совпадение домена с источником студии не позволяют выдать подделку за оригинал, как бы точно ни скопировали барабаны.</p>
+<p>Девятый пункт ловит скин математикой. Клон часто забывает выровнять параметры: число линий, максимальный выигрыш в множителях xN и класс волатильности должны совпадать с паспортом игры у разработчика. Другой максимальный множитель при том же названии — почти верный признак подменённого движка под знакомой обёрткой. Три источника вместе — бюллетени студий, базы подделок, паспорт игры — закрывают последний слой пробы и не требуют доверия к самому заведению.</p>
+<div class="prb-flags">
+<h4>Красные флаги последнего слоя</h4>
+<ul>
+<li>генератор «проверяет сам провайдер», отчёта лаборатории нет;</li>
+<li>домен игры встречается в бюллетене студии о клонах;</li>
+<li>максимальный выигрыш или число линий не как в паспорте тайтла.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Russia 244-FZ -->
+<section class="prb-sec" id="prb-ru">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Контекст · 244-ФЗ</span>
+<h2>Лицензионный слот и Россия: сертифицируют софт, а не оператора</h2>
+<p>Слово «лицензионные» рядом со слотами вводит в заблуждение, если понимать его как российское разрешение. Федеральный закон 244-ФЗ допускает азартные игры только в четырёх игорных зонах офлайн; онлайн-казино в России вне правового поля, и выдать онлайн-оператору российскую лицензию на слоты невозможно. Значит, подлинность игры здесь — это сертификация самого софта зарубежной лабораторией и лицензия провайдера-разработчика, а не бумага заведения.</p>
+<p>Из этого следует практический вывод: проба смотрит на происхождение кода и отчёт лаборатории, а не на громкую строку «лицензия в России» в подвале сайта — такой строки у честного оператора не бывает, потому что выдать её некому. Любое прямое обещание российской онлайн-лицензии ложно и само по себе служит красным флагом. Реестр запрещённых ресурсов ведёт Роскомнадзор; обсуждать обход блокировок эта страница не будет — её тема в том, как по метаданным отличить сертифицированный тайтл от клона, а не как получить к нему доступ.</p>
+</div>
+</section>
+
+<!-- HowTo steps -->
+<section class="prb-sec" id="prb-steps">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Порядок · семь шагов</span>
+<h2>Сверка сборки слота за семь шагов перед ставкой</h2>
+<p>Девять пунктов листа складываются в короткий маршрут. Он занимает меньше десяти минут и не требует ничего, кроме запущенной игры и браузера.</p>
+<ol class="prb-steps">
+<li><b>Откройте инфо-окно игры.</b> В запущенной игре найдите кнопку «i» или «Правила»: там указаны название тайтла, провайдер, версия и значение RTP.</li>
+<li><b>Сверьте RTP с публичным релизом.</b> Сравните указанный процент с официальным диапазоном выпуска у разработчика софта; заниженная сборка выдаёт клон или урезанную версию.</li>
+<li><b>Посмотрите домен загрузки.</b> Через исходный код страницы проверьте, с какого домена грузится iframe игры: он должен принадлежать провайдеру или его заявленной сети доставки.</li>
+<li><b>Найдите номер сертификата лаборатории.</b> В подвале игры или на странице провайдера отыщите ссылку на отчёт GLI, eCOGRA, iTech Labs или BMM с номером, покрывающим этот тайтл.</li>
+<li><b>Проверьте аккредитацию лаборатории.</b> Убедитесь, что лаборатория признана регулятором (MGA, UKGC, GCB Кюрасао); непризнанная подпись не даёт гарантии честности ГСЧ.</li>
+<li><b>Сделайте один раунд и откройте историю.</b> В истории ставок должен быть идентификатор раунда формата провайдера с именем студии и версией движка — метка подлинного сеанса.</li>
+<li><b>Проверьте игру по спискам клонов.</b> Сверьте тайтл и домен с бюллетенями провайдеров и базами поддельных игр; совпадение с записью о клоне закрывает проверку.</li>
+</ol>
+<p>Шаги 1–3 отсекают большинство подделок за три минуты: урезанный возврат и чужой домен видны сразу. Шаги 4–7 закрепляют вывод документами и чужими наблюдениями. Если на шаге 2 или 3 встаёт твёрдое «нет», остальные шаги уже не нужны — тайтл неподтверждён.</p>
+</div>
+</section>
+
+<!-- total -->
+<section class="prb-sec" id="prb-total">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Сводный лист · итог</span>
+<h2>Когда девять проверок складываются в оригинал</h2>
+<p>Проба не превращается в балл или звёзды — исход у неё качественный. Тайтл считается подтверждённым, когда все четыре стоп-признака (сертификат, аккредитация лаборатории, домен, тип генератора) стоят в состоянии <b class="prb-tag prb-y">годен</b>, а версия RTP совпала с публичным релизом. Открытые пункты из слоя параметров — невидимая версия движка, скрытый за прокси домен — допустимы, пока ни один стоп-признак не провален и нет совпадений со списками клонов.</p>
+<div class="prb-tw">
+<table>
+<caption>Три исхода пробы по состоянию пунктов. Схема редакции «Проба», 2026.</caption>
+<thead><tr><th>Состояние пунктов</th><th>Вывод</th><th>Что делать</th></tr></thead>
+<tbody>
+<tr><td>Четыре стоп-признака «годен», RTP совпал</td><td><span class="prb-pill prb-y">оригинал подтверждён</span></td><td>сборка сертифицирована, можно опираться на объявленный возврат</td></tr>
+<tr><td>Стоп-признаки «годен», часть параметров открыта</td><td><span class="prb-pill prb-h">условно подтверждён</span></td><td>дособрать версию движка и домен, следить за историей раундов</td></tr>
+<tr><td>Любой стоп-признак «нет» или есть в списках клонов</td><td><span class="prb-pill prb-n">не подтверждён</span></td><td>считать клоном или урезанной сборкой, ставку не делать</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:1.3em">Состояние «условно подтверждён» — рабочее, а не запасное. Оно означает, что код пришёл из правильного источника и проверен лабораторией, но часть параметров интерфейса пока не видна: заведение спрятало версию движка или проксирует домен. В такой ситуации опираться на объявленный возврат можно, а открытые пункты дособрать позже — по истории раундов, которая накапливает идентификаторы, и по странице студии, где версия и диапазон возврата указаны для сверки. Переход в «не подтверждён» происходит ровно в тот момент, когда появляется первое твёрдое противоречие, а не из-за нехватки данных.</p>
+<p style="margin-top:1.3em">Такой порог намеренно строг к происхождению и терпим к мелочам интерфейса. Он отражает смысл слова «лицензионный» применительно к игре: честность вращений доказывает отчёт лаборатории на конкретный билд, а не репутация витрины. Один твёрдый провал слоя происхождения перевешивает любое число украшений рядом с барабанами.</p>
+</div>
+</section>
+
+<!-- channel -->
+<section class="prb-sec" id="prb-chan">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Обновления · канал</span>
+<h2>Где выходят поправки к пробе и свежие записи о клонах</h2>
+<div class="prb-chan">
+<p>Лаборатории обновляют реестры, студии публикуют новые бюллетени о подделках, а переходные правила Кюрасио по закону LOK ещё меняются. Редакция «Проба» ведёт разбор лицензионных слотов и правит лист сверки по мере этих изменений — какие номера отчётов перестали открываться, какие домены попали в списки клонов, где поменялся официальный диапазон RTP. Короткие заметки о правках выходят в канале.</p>
+<a class="prb-cta" href="https://t.me/top_casino_2027" rel="noopener" target="_blank">Канал с поправками к листу →</a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="prb-sec" id="prb-faq">
+<div class="prb-wrap prb-prose">
+<span class="prb-idx">Вопросы · FAQ</span>
+<h2>Вопросы о подлинности лицензионных слотов</h2>
+<details class="prb-q"><summary>Чем лицензионный слот отличается от клона с виду?</summary><div class="prb-ans">Внешне клон повторяет графику и звук оригинала, поэтому отличие лежит не в картинке, а в метаданных: номер сертификата лаборатории на конкретный тайтл, домен загрузки, принадлежащий провайдеру, версия RTP из официального релиза и идентификатор раунда формата студии. Клон занижает RTP, грузится со стороннего домена и не имеет отчёта лаборатории на этот билд.</div></details>
+<details class="prb-q"><summary>Где в игре смотреть версию RTP?</summary><div class="prb-ans">Версия RTP указана в инфо-окне игры — кнопка «i» или «Правила» внутри запущенного тайтла, в разделе о возврате игроку. Там же стоит имя провайдера и номер версии. Если процента нет вовсе или он ниже официального диапазона выпуска без пометки, это сигнал урезанной сборки.</div></details>
+<details class="prb-q"><summary>Что означает сертификат GLI-19 или eCOGRA на слоте?</summary><div class="prb-ans">Это отчёт независимой лаборатории о том, что генератор случайных чисел и заявленный RTP конкретной версии игры проверены по стандарту. GLI-19 относится к онлайн-играм, eCOGRA, iTech Labs и BMM выдают свои отчёты. Важен номер отчёта на этот тайтл и аккредитация самой лаборатории регулятором, а не просто логотип на странице.</div></details>
+<details class="prb-q"><summary>Можно ли доверять слоту без сертификата лаборатории?</summary><div class="prb-ans">Отсутствие отчёта лаборатории переводит пункт в состояние «нет»: честность ГСЧ и заявленный RTP ничем не подтверждены. Слот может оказаться и оригиналом с непубличным отчётом, но проверить это игрок не способен, поэтому пункт остаётся непройденным до появления номера отчёта.</div></details>
+<details class="prb-q"><summary>Бывают ли у одного слота разные версии RTP?</summary><div class="prb-ans">Да, разработчики выпускают один тайтл в нескольких математических сборках — например около 96 %, 94 %, 92 % и ниже, — и оператор выбирает версию при интеграции. Поэтому лицензионный оригинал и урезанный релиз одной игры различаются именно числом RTP в инфо-окне, а не названием.</div></details>
+<details class="prb-q"><summary>Есть ли в России лицензия на слоты?</summary><div class="prb-ans">Федеральный закон 244-ФЗ разрешает азартные игры только в четырёх игорных зонах офлайн, онлайн-казино в России вне закона. Поэтому «лицензионный слот» означает сертификацию самого софта зарубежной лабораторией и лицензию провайдера, а не российскую лицензию оператора. Любое обещание российской онлайн-лицензии ложно.</div></details>
+</div>
+</section>
+
+<div class="prb-wrap prb-prose">
+<p class="prb-care"><b>18+. Азартные игры несут риск потери денег.</b> Материал носит справочный характер и описывает метод сверки метаданных, а не призыв к игре. Условный тайтл «Сапфир-20» и числа в разборе — расчётный пример, а не замер конкретного заведения; реальные операторы на странице не названы и не оценены. Играйте только на средства, потерю которых переживёте; при признаках зависимости обратитесь за помощью.</p>
+</div>
+</main>
+
+<footer class="prb-foot">
+<div class="prb-foot-grid">
+<div>
+<h5>Редакция «Проба»</h5>
+<p>Независимый разбор лицензионных слотов: как по сертификату лаборатории, домену загрузки, версии RTP и подписи раунда отличить оригинал провайдера от клона. Без рекламы и партнёрских ссылок. Условные тайтлы помечены как расчётные примеры.</p>
+</div>
+<div>
+<h5>Разделы</h5>
+<ul>
+<li><a href="#prb-list">Лист из девяти пунктов</a></li>
+<li><a href="#prb-cert">Сертификат лаборатории</a></li>
+<li><a href="#prb-rtp">Версия RTP</a></li>
+<li><a href="#prb-steps">Сверка за семь шагов</a></li>
+<li><a href="#prb-total">Сводный итог</a></li>
+</ul>
+</div>
+<div>
+<h5>Пометки</h5>
+<ul>
+<li>Год разбора — 2026</li>
+<li>Метод, а не реклама</li>
+<li>18+ · игра несёт риск</li>
+<li>244-ФЗ: онлайн вне закона РФ</li>
+</ul>
+</div>
+</div>
+<div class="prb-copy">© 2026 Редакция «Проба» · litsenzionnye-sloty28.github.io · справочный материал о подлинности слотов, 18+</div>
+</footer>
+
+<script>
+(function(){
+ var top=document.getElementById('prb-top');
+ var onScroll=function(){ if(window.scrollY>8){top.classList.add('prb-stuck');}else{top.classList.remove('prb-stuck');} };
+ onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+ // theme toggle
+ var btn=document.getElementById('prb-theme');
+ var root=document.documentElement;
+ try{var saved=localStorage.getItem('prb-theme'); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+ btn.addEventListener('click',function(){
+  var cur=root.getAttribute('data-theme');
+  var dark=cur?cur==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;
+  var next=dark?'light':'dark';
+  root.setAttribute('data-theme',next);
+  try{localStorage.setItem('prb-theme',next);}catch(e){}
+ });
+ // active nav
+ var links=[].slice.call(document.querySelectorAll('.prb-nav a'));
+ var map={};links.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)map[id]=a;});
+ if('IntersectionObserver' in window){
+  var ob=new IntersectionObserver(function(es){
+   es.forEach(function(en){ if(en.isIntersecting){ links.forEach(function(l){l.classList.remove('prb-here');}); var a=map[en.target.id]; if(a)a.classList.add('prb-here'); } });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)ob.observe(el);});
+ }
+})();
+</script>
+</body>
+</html>
